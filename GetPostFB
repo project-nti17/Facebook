@@ -1,0 +1,17 @@
+#using R Studio
+install.packages("httpuv" ,  repos="https://cran.rstudio.com/")
+install.packages("Rfacebook" ,  repos="https://cran.rstudio.com/")
+install.packages("RColorBrewer" , repos="https://cran.rstudio.com/")
+install.packages("RCurl" , repos="https://cran.rstudio.com/")
+install.packages("rjson" , repos="https://cran.rstudio.com/")
+install.packages("httr" , repos="https://cran.rstudio.com/")
+install.packages("httpd" , repos="https://cran.rstudio.com/")
+
+library("Rfacebook")
+library("httpuv")
+library("RColorBrewer")
+
+access_token="USE YOUR OWN TEMPORARY ACCESS_TOKEN"
+options(RCurloptions=list(verbose=FALSE,capath=system.file("CurlSSL","cacert.pem",package="Rcurl"),ssl.verifypeer=FALSE))
+
+get_post <- getPost("USER-ID_POST-ID", token=access_token, n = 5, comments = TRUE, likes = TRUE,reactions = FALSE, n.likes = 10, n.comments = 10, n.reactions = 10,api = NULL)
