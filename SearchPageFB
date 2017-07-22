@@ -16,3 +16,4 @@ options(RCurloptions=list(verbose=FALSE,capath=system.file("CurlSSL","cacert.pem
 
 pages <- searchPages("sport", token=access_token, n = 200)
 page_name <- pie(table (pages$category))
+summary(pages)
